@@ -5,14 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1_04._12"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-169,126,0,0"><Run Language="ru-ru" Text="Л"/><Run Text="огин"/></TextBlock>
-        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Width="201"/>
-        <TextBlock HorizontalAlignment="Center" Margin="-161,178,0,0" VerticalAlignment="Top"><Run Language="ru-ru" Text="П"/><Run Text="ароль"/></TextBlock>
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="Вход" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Width="200" Click="Login_click" Height="26"/>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="200" Click="Register_click" Height="26"/>
+        Title="MainWindow" Height="675" Width="1200">
+    <Grid Background="White">
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Width="150" Margin="0,109,0,0" FontSize="20"><Run Language="ru-ru" Text="Вход"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,188,0,0"><Run Language="ru-ru" Text="Л"/><Run Text="огин"/></TextBlock>
+        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,209,0,0" VerticalAlignment="Top" Width="200" Cursor="" UndoLimit="102" SelectionOpacity="2">
+            <TextBox.Style>
+                <Style/>
+            </TextBox.Style>
+        </TextBox>
+        <TextBlock HorizontalAlignment="Center" Margin="0,240,0,0" VerticalAlignment="Top"><Run Language="ru-ru" Text="П"/><Run Text="ароль"/></TextBlock>
+        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Center" Margin="0,261,0,0" VerticalAlignment="Top" Width="200"/>
+        <Button Content="Вход" HorizontalAlignment="Center" Margin="0,300,0,0" VerticalAlignment="Top" Width="200" Click="Login_click" Height="26"/>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,368,0,0" VerticalAlignment="Top" Width="200" Click="Register_click" Height="26"/>
+        <TextBlock HorizontalAlignment="Center" Margin="0,347,0,0" VerticalAlignment="Top"><Run Language="ru-ru" Text="Нет аккаунта?"/></TextBlock>
     </Grid>
 </Window>
 

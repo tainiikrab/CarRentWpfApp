@@ -50,13 +50,13 @@ namespace WpfApp1_04._12
 
         private void Login_click(object sender, RoutedEventArgs e)
         {
-            doc.Load("..\\..\\..\\xml\\login_data.xml");
+            doc.Load("..\\..\\..\\xml\\clients.xml");
             var items = doc;
             string login = LoginBox.Text;
             string passwordHash = PasswordHasher.GetHash(PasswordBox.Password);
             XmlElement? root = doc.DocumentElement;
 
-            XmlNodeList? nodes = root.SelectNodes("user");
+            XmlNodeList? nodes = root.SelectNodes("client");
             bool wrong_data = true;
             foreach (XmlNode node in nodes)
             {
@@ -71,46 +71,13 @@ namespace WpfApp1_04._12
             if (wrong_data == true)
                 MessageBox.Show("Неправильнй логин или пароль!");
                 wrong_data = true;
-            //if (login == loginFromXML && passwordHash == passwordHashFromXML)
-            //{
-            //    TablesPage tp = new();
-            //    this.Content = tp;
-            //}
-            //else
-            //{
-            //    MessageBox.Show("Wrong login or password");
-            //TablesPage tp = new();
-            //this.Content = tp;
         }
 
 
         private void Register_click(object sender, RoutedEventArgs e)
         {
-            XDocument doc_write = XDocument.Load("..\\..\\..\\xml\\login_data.xml");
-            string login = LoginBox.Text;
-            doc.Load("..\\..\\..\\xml\\login_data.xml");
-
-
-            XmlElement? root = doc.DocumentElement;
-
-            XmlNodeList? nodes = root.SelectNodes("user");
-            bool existing_data = false;
-            foreach (XmlNode node in nodes)
-            {
-                if (node["login"].InnerText == login)
-                {
-                    MessageBox.Show("Этот логин уже существует!");
-                    return;
-                }
-            }
-
-            string PasswordHash = PasswordHasher.GetHash(PasswordBox.Password);
-            XElement root_new = new XElement("user");
-            root_new.Add(new XElement("login", login));
-            root_new.Add(new XElement("PasswordHash", PasswordHash));
-            doc_write.Element("users").Add(root_new);
-            doc_write.Save("..\\..\\..\\xml\\login_data.xml");
-
+            RegisterPage rp = new();
+            this.Content = rp;
         }
     }
 }
