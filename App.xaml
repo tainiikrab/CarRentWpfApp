@@ -5,5 +5,9 @@
              StartupUri="MainWindow.xaml">
     <Application.Resources>
          
+        <LinearGradientBrush x:Key="GradientButton1" EndPoint="1,1" StartPoint="0,0">
+            <GradientStop Color="#FF76BAAE"/>
+            <GradientStop Color="#FFB3E099" Offset="1"/>
+        </LinearGradientBrush>
     </Application.Resources>
 </Application>

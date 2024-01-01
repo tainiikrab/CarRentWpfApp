@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<clients>
+  <client>
+    <login>admin</login>
+    <PasswordHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</PasswordHash>
+	 <Name>Admin</Name>
+	 <Surname>Admin</Surname>
+	 <Patronym>Admin</Patronym>
+	 <Telephone>+xxxxxx</Telephone>
+	 <Address>xxxxxx</Address>
+  </client>
+  <client>
+    <login></login>
+    <PasswordHash>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</PasswordHash>
+    <Name>Пустодий</Name>
+    <Surname>Нечегоев</Surname>
+    <Patronym>Войдович</Patronym>
+    <Telephone>+0 000 000 00 00</Telephone>
+    <Address>N0. Whe Re.street</Address>
+  </client>
+  <client>
+    <login>petrick</login>
+    <PasswordHash>b6fb6c0a14e930415619bf63131b3479c5d856d5a203b9fae9e90e6470d3c60e</PasswordHash>
+    <Name>Иван</Name>
+    <Surname>Петров</Surname>
+    <Patronym>Алексеевич</Patronym>
+    <Telephone>+7 953 228 08 44</Telephone>
+    <Address>508 Negro Alloyo Laine</Address>
+  </client>
+  <client>
+    <login>sidor</login>
+    <PasswordHash>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</PasswordHash>
+    <Name>Арго</Name>
+    <Surname>Сидоренко</Surname>
+    <Patronym>Екатеринович</Patronym>
+    <Telephone>+7 953 228 08 44</Telephone>
+    <Address>г. Москва ул. Нененского д.22</Address>
+  </client>
+  <client>
+    <login>Логин</login>
+    <PasswordHash>cb1a2074b3a027ffa7d7d9c54682c3835fffc7f6d620d8a38532f075cc2f17a0</PasswordHash>
+    <Name>Имя</Name>
+    <Surname>Фамилия</Surname>
+    <Patronym>Отчество</Patronym>
+    <Telephone>Телефон</Telephone>
+    <Address>Адрес</Address>
+  </client>
+</clients>

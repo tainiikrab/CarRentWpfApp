@@ -16,6 +16,8 @@ using System.Xml.Linq;
 using System.IO;
 using System.Security.Cryptography;
 using System.Xml;
+using System.Security.Cryptography.X509Certificates;
+using System.Diagnostics;
 
 namespace WpfApp1_04._12
 {
@@ -46,10 +48,14 @@ namespace WpfApp1_04._12
         public MainWindow()
         {
             InitializeComponent();
+            LoginPage lp = new LoginPage();
+            this.Content = lp;
+
         }
 
-        private void Login_click(object sender, RoutedEventArgs e)
+        public void OpenTablesPage()
         {
+<<<<<<< Updated upstream
             doc.Load("..\\..\\..\\xml\\login_data.xml");
             var items = doc;
             string login = LoginBox.Text;
@@ -81,11 +87,14 @@ namespace WpfApp1_04._12
             //    MessageBox.Show("Wrong login or password");
             //TablesPage tp = new();
             //this.Content = tp;
+=======
+            TablesPage tp = new TablesPage();
+            this.Content = tp;
+>>>>>>> Stashed changes
         }
-
-
-        private void Register_click(object sender, RoutedEventArgs e)
+        public void OpenRegisterPage()
         {
+<<<<<<< Updated upstream
             XDocument doc_write = XDocument.Load("..\\..\\..\\xml\\login_data.xml");
             string login = LoginBox.Text;
             doc.Load("..\\..\\..\\xml\\login_data.xml");
@@ -111,6 +120,15 @@ namespace WpfApp1_04._12
             doc_write.Element("users").Add(root_new);
             doc_write.Save("..\\..\\..\\xml\\login_data.xml");
 
+=======
+            RegisterPage rp = new RegisterPage();
+            this.Content = rp;
+>>>>>>> Stashed changes
+        }
+        public void OpenLoginPage()
+        {
+            LoginPage lp = new LoginPage();
+            this.Content = lp;
         }
     }
 }

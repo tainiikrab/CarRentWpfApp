@@ -8,4 +8,8 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Page Remove="xml\Page1.xaml" />
+  </ItemGroup>
+
 </Project>
