@@ -3,11 +3,11 @@
   <client>
     <login>admin</login>
     <PasswordHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</PasswordHash>
-	 <Name>Admin</Name>
-	 <Surname>Admin</Surname>
-	 <Patronym>Admin</Patronym>
-	 <Telephone>+xxxxxx</Telephone>
-	 <Address>xxxxxx</Address>
+    <Name>Admin</Name>
+    <Surname>Admin</Surname>
+    <Patronym>Admin</Patronym>
+    <Telephone>+xxxxxx</Telephone>
+    <Address>xxxxxx</Address>
   </client>
   <client>
     <login></login>
@@ -38,6 +38,15 @@
   </client>
   <client>
     <login>Логин</login>
+    <PasswordHash>cb1a2074b3a027ffa7d7d9c54682c3835fffc7f6d620d8a38532f075cc2f17a0</PasswordHash>
+    <Name>Имя</Name>
+    <Surname>Фамилия</Surname>
+    <Patronym>Отчество</Patronym>
+    <Telephone>Телефон</Telephone>
+    <Address>Адрес</Address>
+  </client>
+  <client>
+    <login>xxx</login>
     <PasswordHash>cb1a2074b3a027ffa7d7d9c54682c3835fffc7f6d620d8a38532f075cc2f17a0</PasswordHash>
     <Name>Имя</Name>
     <Surname>Фамилия</Surname>

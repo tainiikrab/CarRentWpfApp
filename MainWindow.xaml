@@ -5,17 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1_04._12"
         mc:Ignorable="d"
-<<<<<<< Updated upstream
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <TextBlock HorizontalAlignment="Center" VerticalAlignment="Top" Margin="-169,126,0,0"><Run Language="ru-ru" Text="Л"/><Run Text="огин"/></TextBlock>
-        <TextBox x:Name="LoginBox" HorizontalAlignment="Center" Margin="0,147,0,0" VerticalAlignment="Top" Width="201"/>
-        <TextBlock HorizontalAlignment="Center" Margin="-161,178,0,0" VerticalAlignment="Top"><Run Language="ru-ru" Text="П"/><Run Text="ароль"/></TextBlock>
-        <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Center" Margin="0,199,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button Content="Вход" HorizontalAlignment="Center" Margin="0,238,0,0" VerticalAlignment="Top" Width="200" Click="Login_click" Height="26"/>
-        <Button Content="Зарегистрироваться" HorizontalAlignment="Center" Margin="0,276,0,0" VerticalAlignment="Top" Width="200" Click="Register_click" Height="26"/>
-    </Grid>
-=======
         Title="Прокат Автомобилей" Height="675" Width="1200">
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientButton" EndPoint="1,1" StartPoint="0,0">
@@ -24,6 +13,5 @@
         </LinearGradientBrush>
     </Window.Resources>
     <Grid Background="#FF0C0C0C"></Grid>
->>>>>>> Stashed changes
 </Window>
 
