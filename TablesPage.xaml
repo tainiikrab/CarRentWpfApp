@@ -9,7 +9,31 @@
       Title="TablesPage">
 
     <Grid Background="#FF0C0C0C">
-        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,240,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White"><Run Language="ru-ru" Text="Здравствуйте, Клиент Клиентович."/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Здравствуйте, Клиент Клиентович!"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,193,0,0"><Run Language="ru-ru" Text="Ваши автомобили"/><Run Text=":"/></TextBlock>
+        <TextBlock x:Name="DebugBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,134,0,0"><Run Language="ru-ru" Text="Debug"/><Run Text=":"/></TextBlock>
+        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=4}" Margin="264,225,264,97" Background="#FF1A1A1A" Foreground="White" AlternatingRowBackground="#FF1A1A1A" RowBackground="#FF1A1A1A" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="#FF222222" HeadersVisibility="Column" BorderBrush="{x:Null}" Loaded="grid_Loaded" MouseUp="grid_MouseUp" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="DataGridColumnHeader">
+                    <Setter Property="Background" Value="#FFB3E099"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Height" Value="30"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Height" Value="30"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0C0C0C"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFB3E099"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF1A1A1A"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="White"/>
+                
+
+            </DataGrid.Resources>
+        </DataGrid>
 
     </Grid>
 </Page>

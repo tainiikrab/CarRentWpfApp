@@ -63,6 +63,7 @@ namespace WpfApp1_04._12
             root_new.Add(new XElement("Patronym", PatronymBox.Text));
             root_new.Add(new XElement("Telephone", TelephoneBox.Text));
             root_new.Add(new XElement("Address", AddressBox.Text));
+            root_new.Add(new XElement("RentalRecord", 0));
             doc_write.Element("clients").Add(root_new);
             doc_write.Save("..\\..\\..\\xml\\clients.xml");
 
@@ -85,16 +86,6 @@ namespace WpfApp1_04._12
             {
                 textBox.Text = string.Empty;
             }
-        }
-
-        private void SurnameBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void TelephoneBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }

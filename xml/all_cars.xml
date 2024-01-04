@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<cars>
+	<car>
+		<Id></Id>
+		<Model></Model>
+		<CarPrice></CarPrice>
+		<BaseRentalPrice></BaseRentalPrice>
+		<ManufactureYear></ManufactureYear>
+		<RentalPeriod></RentalPeriod>
+	</car>
+	<car>
+		<Id>1</Id>
+		<Model>Lada Kalina 1</Model>
+		<CarPrice>150000</CarPrice>
+		<BaseRentalPrice>1200</BaseRentalPrice>
+		<ManufactureYear>2006</ManufactureYear>
+		<RentalPeriod>190</RentalPeriod>
+	</car>
+	<car>
+		<Id>2</Id>
+		<Model>Tesla Model X</Model>
+		<CarPrice>4000000</CarPrice>
+		<BaseRentalPrice>8200</BaseRentalPrice>
+		<ManufactureYear>2019</ManufactureYear>
+		<RentalPeriod>17</RentalPeriod>
+	</car>
+	<car>
+		<Id>3</Id>
+		<Model>Subaru Forester</Model>
+		<CarPrice>1045000</CarPrice>
+		<BaseRentalPrice>3500</BaseRentalPrice>
+		<ManufactureYear>2012</ManufactureYear>
+		<RentalPeriod>155</RentalPeriod>
+	</car>
+	<car>
+		<Id>4</Id>
+		<Model>Toyota Camry</Model>
+		<CarPrice>2000000</CarPrice>
+		<BaseRentalPrice>3100</BaseRentalPrice>
+		<ManufactureYear>2018</ManufactureYear>
+		<RentalPeriod>65</RentalPeriod>
+	</car>
+	<car>
+		<Id>5</Id>
+		<Model>Toyota Corolla</Model>
+		<CarPrice>1500000</CarPrice>
+		<BaseRentalPrice>4500</BaseRentalPrice>
+		<ManufactureYear>2017</ManufactureYear>
+		<RentalPeriod>33</RentalPeriod>
+	</car>
+	<car>
+		<Id>6</Id>
+		<Model>Toyota Land Cruiser Prado</Model>
+		<CarPrice>3000000</CarPrice>
+		<BaseRentalPrice>5500</BaseRentalPrice>
+		<ManufactureYear>2019</ManufactureYear>
+		<RentalPeriod>21</RentalPeriod>
+	</car>
+	<car>
+		<Id>7</Id>
+		<Model>Toyota RAV4</Model>
+		<CarPrice>2000000</CarPrice>
+		<BaseRentalPrice>3900</BaseRentalPrice>
+		<ManufactureYear>2018</ManufactureYear>
+		<RentalPeriod>85</RentalPeriod>
+	</car>
+	<car>
+		<Id>8</Id>
+		<Model>Toyota Yaris</Model>
+		<CarPrice>1000000</CarPrice>
+		<BaseRentalPrice>3500</BaseRentalPrice>
+		<ManufactureYear>2015</ManufactureYear>
+		<RentalPeriod>42</RentalPeriod>
+	</car>
+	<car>
+		<Id>9</Id>
+		<Model>Wolkswagen Polo</Model>
+		<CarPrice>1000000</CarPrice>
+		<BaseRentalPrice>3500</BaseRentalPrice>
+		<ManufactureYear>2015</ManufactureYear>
+		<RentalPeriod>100</RentalPeriod>
+	</car>
+	<car>
+		<Id>10</Id>
+		<Model>Wolkswagen Tiguan</Model>
+		<CarPrice>2000000</CarPrice>
+		<BaseRentalPrice>3500</BaseRentalPrice>
+		<ManufactureYear>2018</ManufactureYear>
+		<RentalPeriod>235</RentalPeriod>
+	</car>
+	<car>
+		<Id>11</Id>
+		<Model>Wolkswagen Touareg</Model>
+		<CarPrice>3000000</CarPrice>
+		<BaseRentalPrice>4500</BaseRentalPrice>
+		<ManufactureYear>2019</ManufactureYear>
+		<RentalPeriod>10</RentalPeriod>
+	</car>
+	<car>
+		<Id>12</Id>
+		<Model>Wolkswagen Transporter</Model>
+		<CarPrice>2000000</CarPrice>
+		<BaseRentalPrice>3900</BaseRentalPrice>
+		<ManufactureYear>2018</ManufactureYear>
+		<RentalPeriod>28</RentalPeriod>
+	</car>
+	<car>
+		<Id>13</Id>
+		<Model>Wolkswagen Passat</Model>
+		<CarPrice>2000000</CarPrice>
+		<BaseRentalPrice>5200</BaseRentalPrice>
+		<ManufactureYear>2018</ManufactureYear>
+		<RentalPeriod>22</RentalPeriod>
+	</car>	
+</cars>

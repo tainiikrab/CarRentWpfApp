@@ -56,6 +56,7 @@ namespace WpfApp1_04._12
                 MessageBox.Show("Ошибка", "Неправильный логин или пароль.", MessageBoxButton.OK);
 
             wrong_data = true;
+            wrong_data = true;
         }
 
 
