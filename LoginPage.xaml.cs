@@ -48,6 +48,11 @@ namespace WpfApp1_04._12
                     currentLogin = login;
                     Application.Current.Properties["currentLogin"] = login;
                     wrong_data = false;
+                    if (login == "admin")
+                    {
+                        mainWindow.OpenAdminPage();
+                        break;
+                    }
                     mainWindow.OpenTablesPage();
                     break;
                 }

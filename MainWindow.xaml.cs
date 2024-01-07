@@ -50,6 +50,8 @@ namespace WpfApp1_04._12
             InitializeComponent();
             LoginPage lp = new LoginPage();
             this.Content = lp;
+/*            RentWindow rent = new RentWindow();
+            rent.Show();*/
 
         }
 
@@ -67,6 +69,16 @@ namespace WpfApp1_04._12
         {
             LoginPage lp = new LoginPage();
             this.Content = lp;
+        }
+        public void OpenAdminPage()
+        {
+            AdminPage ap = new AdminPage();
+            this.Content = ap;
+        }
+        public void OpenRentPage()
+        {
+            RentPage rp = new RentPage();
+            this.Content = rp;
         }
     }
 }

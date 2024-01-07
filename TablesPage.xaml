@@ -9,15 +9,16 @@
       Title="TablesPage">
 
     <Grid Background="#FF0C0C0C">
-        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Здравствуйте, Клиент Клиентович!"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <TextBlock HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,193,0,0"><Run Language="ru-ru" Text="Ваши автомобили"/><Run Text=":"/></TextBlock>
-        <TextBlock x:Name="DebugBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,134,0,0"><Run Language="ru-ru" Text="Debug"/><Run Text=":"/></TextBlock>
-        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=4}" Margin="264,225,264,97" Background="#FF1A1A1A" Foreground="White" AlternatingRowBackground="#FF1A1A1A" RowBackground="#FF1A1A1A" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="#FF222222" HeadersVisibility="Column" BorderBrush="{x:Null}" Loaded="grid_Loaded" MouseUp="grid_MouseUp" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Здравствуйте, Клиент Клиентович!" FontSize="20"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
+        <TextBlock x:Name="CarsBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,121,0,0"><Run Language="ru-ru" Text="Ваши автомобили"/><Run Text=":"/></TextBlock>
+        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=4}" Margin="264,152,264,170" Background="#FF1A1A1A" Foreground="White" AlternatingRowBackground="#FF1A1A1A" RowBackground="#FF1A1A1A" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="#FF222222" HeadersVisibility="Column" BorderBrush="{x:Null}" Loaded="grid_Loaded" MouseUp="grid_MouseUp" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" CanUserResizeColumns="False" VerticalAlignment="Top">
             <DataGrid.ColumnHeaderStyle>
                 <Style TargetType="DataGridColumnHeader">
                     <Setter Property="Background" Value="#FFB3E099"/>
                     <Setter Property="Foreground" Value="Black"/>
                     <Setter Property="Height" Value="30"/>
+                    <Setter Property="Padding" Value="30, 0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
                 </Style>
             </DataGrid.ColumnHeaderStyle>
             <DataGrid.RowStyle>
@@ -30,10 +31,22 @@
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFB3E099"/>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF1A1A1A"/>
                 <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="White"/>
-                
+
 
             </DataGrid.Resources>
+            <DataGrid.CellStyle>
+                <Style TargetType="DataGridCell">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.CellStyle>
         </DataGrid>
+        <Button Content="Арендовать автомобиль" HorizontalAlignment="Center" Margin="0,374,0,0" VerticalAlignment="Top" Width="200" Click="Rent_click" Height="26" Foreground="Black" BorderBrush="{x:Null}" Background="{DynamicResource GradientButton1}">
+            <Button.Resources>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0C0C0C"/>
+            </Button.Resources>
+        </Button>
+        <Button Content="Выйти из аккаунта" HorizontalAlignment="Center" Margin="0,405,0,0" VerticalAlignment="Top" Width="200" Click="Return_click" Height="26" BorderBrush="{x:Null}" Background="#FFB3E099"/>
+        <Button Content="Удалить аккаунт" HorizontalAlignment="Center" Margin="0,462,0,0" VerticalAlignment="Top" Width="200" Click="Delete_click" Height="26" BorderBrush="#FFB3E099" Background="#FF0C0C0C" Foreground="White"/>
 
     </Grid>
 </Page>

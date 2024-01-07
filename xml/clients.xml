@@ -12,17 +12,19 @@
     <Patronym>Войдович</Patronym>
     <Telephone>+0 000 000 00 00</Telephone>
     <Address>N0. Whe Re.street</Address>
-	<RentalRecord>0</RentalRecord>
+    <RentalRecord>0</RentalRecord>
+    <FineRecord>0</FineRecord>
   </client>
   <client>
     <login>petrick</login>
-    <PasswordHash>b6fb6c0a14e930415619bf63131b3479c5d856d5a203b9fae9e90e6470d3c60e</PasswordHash>
+    <PasswordHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</PasswordHash>
     <Name>Иван</Name>
     <Surname>Петров</Surname>
     <Patronym>Алексеевич</Patronym>
     <Telephone>+7 953 228 08 44</Telephone>
     <Address>508 Negro Alloyo Laine</Address>
-	<RentalRecord>0</RentalRecord>
+    <RentalRecord>20</RentalRecord>
+    <FineRecord>0</FineRecord>
   </client>
   <client>
     <login>sidor</login>
@@ -33,6 +35,7 @@
     <Telephone>+7 953 228 08 44</Telephone>
     <Address>г. Москва ул. Нененского д.22</Address>
     <RentalRecord>0</RentalRecord>
+    <FineRecord>0</FineRecord>
   </client>
   <client>
     <login>Логин</login>
@@ -43,5 +46,6 @@
     <Telephone>Телефон</Telephone>
     <Address>Адрес</Address>
     <RentalRecord>0</RentalRecord>
+    <FineRecord>0</FineRecord>
   </client>
 </clients>

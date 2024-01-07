@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
@@ -21,8 +22,10 @@ namespace WpfApp1_04._12
     /// <summary>
     /// Interaction logic for TablesPage.xaml
     /// </summary>
+    //
     public partial class TablesPage : Page
     {
+        MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
         string currentLogin;
         string Name;
         string Patronym;
@@ -48,6 +51,7 @@ namespace WpfApp1_04._12
             }
 
             WelcomeBlock.Text = "Здравствуйте, " + Name + " " + Patronym + "!";
+            WelcomeBlock.FontSize = 20;
 
             XmlDocument rdoc = new XmlDocument();
            
@@ -64,7 +68,12 @@ namespace WpfApp1_04._12
                     rentedCarsId.Add(node["Id"].InnerText);
                 }
             }
-            DebugBlock.Text = string.Join(", ", rentedCarsId);
+            if (rentedCarsId.Count == 0)
+            {
+                grid.Visibility = Visibility.Collapsed;
+                CarsBlock.Text = "У вас нет арендованных автомобилей.";
+            }
+            
         }
         
         private void grid_Loaded(object sender, RoutedEventArgs e)
@@ -72,51 +81,80 @@ namespace WpfApp1_04._12
             XDocument rdoc = XDocument.Load("..\\..\\..\\xml\\rented_cars.xml");
             XDocument cdoc = XDocument.Load("..\\..\\..\\xml\\all_cars.xml");
             List<RentedCarsTable> result = new List<RentedCarsTable>(3);
-
+            grid.Height = 200;
+            grid.Width = 550;
 
             foreach (string Id in rentedCarsId){
                 
-                string sdate;
-                string edate;
                 string model;
 
                 var dates = rdoc.Descendants("car")
                     .Where(x => (string)x.Element("Id") == Id)
                     .FirstOrDefault();
-                sdate = (string)dates.Element("RentStart");
-                edate = (string)dates.Element("RentEnd");
+                DateOnly.TryParse((string)dates.Element("RentStart"), out DateOnly sdate);
+                DateOnly.TryParse((string)dates.Element("RentEnd"), out DateOnly edate);
                 var models = cdoc.Descendants("car")
                     .Where(x => (string)x.Element("Id") == Id)
                     .FirstOrDefault();
                 model = (string)models.Element("Model");
 
-                result.Add(new RentedCarsTable(Id, model, sdate, edate));
+                result.Add(new RentedCarsTable(int.Parse(Id), model, sdate, edate));
             }
             grid.ItemsSource = result;
         }
         private void grid_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            /* MyTable path = grid.SelectedItem as MyTable;
-             MessageBox.Show("Ответ", " ID: " + path.Id + "\n Исполнитель: " + path.Vocalist + "\n Альбом: " + path.Album
-                 + "\n Год: " + path.Year, MessageBoxButton.OK);*/
+            RentedCarsTable path = grid.SelectedItem as RentedCarsTable;
+            MessageBox.Show("Автомобиль", " ID: " + path.Id + "\n Модель: " + path.Модель + "\n Начало проката: " + path.НачалоПроката
+                + "\n Конец Проката: " + path.КонецПроката, MessageBoxButton.OK);
             ;
+        }
+        private void Return_click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenLoginPage();
+        }
+
+        private void Rent_click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.OpenRentPage();
+        }
+        private void Delete_click(object sender, RoutedEventArgs e)
+        {
+            if (rentedCarsId.Count != 0)
+            {
+                MessageBox.Show("Ошибка", "У вас есть арендованные автомобили.", MessageBoxButton.OK);
+                return;
+            }
+            if (MessageBoxResult.OK == MessageBox.Show("Удаление аккаунта", "Вы уверены, что хотите удалить аккаунт?", MessageBoxButton.OKCancel))
+            {
+                MessageBox.Show("Успех", "Вы удалили аккаунт.", MessageBoxButton.OK);
+/*                XDocument doc = XDocument.Load("..\\..\\..\\xml\\clients.xml");
+                var client = doc.Descendants("client")
+                            .Where(x => (string)x.Element("login") == currentLogin)
+                            .FirstOrDefault();
+                client.Remove();
+                doc.Save("..\\..\\..\\xml\\clients.xml");
+                mainWindow.OpenLoginPage();*/
+            }   
         }
 
     }
 
     class RentedCarsTable
     {
-        public RentedCarsTable(string Id, string Model, string RentStart, string RentEnd)
+        public RentedCarsTable(int Id, string Model, DateOnly RentStart, DateOnly RentEnd)
         {
             this.Id = Id;
             this.Модель = Model;
             this.НачалоПроката = RentStart;
             this.КонецПроката = RentEnd;
         }
-        public string Id { get; set; }
+        public int Id { get; set; }
         public string Модель { get; set; }
-        public string НачалоПроката { get; set; }
-        public string КонецПроката { get; set; }
-    }
+        public DateOnly НачалоПроката { get; set; }
+        public DateOnly КонецПроката { get; set; }
 
-}
+
+
+    }
+}   

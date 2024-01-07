@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1_04._12"
         mc:Ignorable="d"
-        Title="Message Box" Height="200" Width="300">
+        Title="Message Box" Height="200" Width="300"
+        ResizeMode="NoResize">
     <Grid Background="#FF0C0C0C">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
