@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
@@ -75,13 +76,24 @@ namespace WpfApp1_04._12
                 Application.Current.Properties["currentyRentalPrice"] = rentalPrice;
                 result.Add(new AllCarsTable(id, model, carPrice, manufactureYear, rentalPeriod, (int)rentalPrice));
             }
+
+
+
+
+
+
+
             grid.ItemsSource = result;
+            grid.Columns[1].Header = "Модель";
+            grid.Columns[2].Header = "Цена автомобиля";
+            grid.Columns[3].Header = "Год производства";
+            grid.Columns[4].Header = "Дней в эксплуатации";
+            grid.Columns[5].Header = "Стоимость проката за день";
             grid.MaxHeight = 300;
 
         }
         private void grid_MouseUp(object sender, MouseButtonEventArgs e)
         {
-            AddRectangle();
             AllCarsTable path = grid.SelectedItem as AllCarsTable;
             if (path == null)
             {
@@ -95,8 +107,9 @@ namespace WpfApp1_04._12
             }
 
             Application.Current.Properties["currentCarId"] = path.Id.ToString();
-            Application.Current.Properties["currentRentalPrice"] = path.СтоимостьПрокатаЗаДень.ToString();
+            Application.Current.Properties["currentRentalPrice"] = path.rentCostPerDay.ToString();
             RentWindow rentWindow = new RentWindow();
+            AddRectangle();
             rentWindow.Show();
         }
 
@@ -127,8 +140,22 @@ namespace WpfApp1_04._12
         public void RemoveRectangle()
         {
             InactiveRectangle.Visibility = Visibility.Hidden;
+            Console.WriteLine("Rectangle removed");
         }
 
+        private void DebugCheckbox_Checked(object sender, RoutedEventArgs e)
+        {
+            XDocument docl = XDocument.Load("..\\..\\..\\xml\\all_cars.xml");
+                var type = (from x in docl.Element("cars").Elements("car")
+                            group x by x.Element("Model").Value into g
+                            select new
+                            {
+                                Тип = g.Key,
+                                Количество = g.Count()
+
+                            }).ToList();
+                grid.ItemsSource = type;
+        }
     }
 
 
@@ -138,19 +165,19 @@ namespace WpfApp1_04._12
         public AllCarsTable(int id, string model, int carPrice, int manufactureYear, int rentalPeriod, int rentPrice)
         {
             this.Id = id;
-            this.Модель = model;
-            this.СтоимостьПрокатаЗаДень = rentPrice;
-            this.ЦенаМашины = carPrice;
-            this.ДнейЭксплуатации = rentalPeriod;
-            this.ГодПроизводства = manufactureYear;
+            this.model = model;
+            this.rentCostPerDay = rentPrice;
+            this.carPrice = carPrice;
+            this.daysOfRent = rentalPeriod;
+            this.manufactureYear = manufactureYear;
 
         }
         public int Id { get; set; }
-        public string Модель { get; set; }
-        public int ЦенаМашины { get; set; }
-        public int ГодПроизводства { get; set; }
-        public int ДнейЭксплуатации { get; set; }
-        public int СтоимостьПрокатаЗаДень { get; set; }
+        public string model { get; set; }
+        public int carPrice { get; set; }
+        public int manufactureYear { get; set; }
+        public int daysOfRent { get; set; }
+        public int rentCostPerDay { get; set; }
 
 
 

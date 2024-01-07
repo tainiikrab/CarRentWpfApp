@@ -42,6 +42,7 @@
         <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Выберите автомобиль:"/></TextBlock>
         <TextBlock HorizontalAlignment="Center" Margin="0,433,0,0" TextWrapping="Wrap" Text="Стоимость проката высчитывается индивидуально на основании пробега автомобиля, его года выпуска, вашего стажа и штрафов." VerticalAlignment="Top" Foreground="#FFBABABA"/>
         <Rectangle x:Name="InactiveRectangle" HorizontalAlignment="Center" Height="636" Stroke="Black" VerticalAlignment="Center" Width="800" Fill="#CC1F1F1F" Visibility="Hidden"/>
+        <CheckBox x:Name="DebugCheckbox" Content="Debug checkbox" HorizontalAlignment="Center" Margin="558,540,0,0" VerticalAlignment="Top" Foreground="White" Checked="DebugCheckbox_Checked"/>
 
     </Grid>
 </Page>

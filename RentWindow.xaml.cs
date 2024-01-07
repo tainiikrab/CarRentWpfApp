@@ -21,7 +21,6 @@ namespace WpfApp1_04._12
     public partial class RentWindow : Window
     {
         MainWindow mainWindow = Application.Current.MainWindow as MainWindow;
-        RentPage rentPage = Application.Current.Resources["RentPage"] as RentPage;
 
         string currentLogin = (string)Application.Current.Properties["currentLogin"];
         string currentCarId = (string)Application.Current.Properties["currentCarId"];
@@ -62,7 +61,8 @@ namespace WpfApp1_04._12
 
         private void Return_click(object sender, RoutedEventArgs e)
         {
-            mainWindow.OpenRentPage();
+            mainWindow.RentRemoveRectangle();
+            this.Close();
         }
         private void Accept_click(object sender, RoutedEventArgs e)
         {
@@ -120,11 +120,15 @@ namespace WpfApp1_04._12
                     }
 
 
-                    rentPage.RemoveRectangle();
+                    mainWindow.RentRemoveRectangle();
                     this.Close();
                 }
             }
-        }   
+        }
+        protected override void OnClosing(System.ComponentModel.CancelEventArgs e)
+        {
+            mainWindow.RentRemoveRectangle();
+        }
         private void StartDateChanged(object sender, SelectionChangedEventArgs e)
         {
             DateTime selectedDate = (DateTime)StartDatePicker.SelectedDate;

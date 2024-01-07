@@ -58,13 +58,24 @@ namespace WpfApp1_04._12
             rdoc.Load("..\\..\\..\\xml\\rented_cars.xml");
        
             XmlElement? root = rdoc.DocumentElement;
-            
+            XDocument rrdoc = XDocument.Load("..\\..\\..\\xml\\rented_cars.xml");
             XmlNodeList? nodes = root.SelectNodes("car");
             foreach (XmlNode node in nodes)
             {
+                var dates = rrdoc.Descendants("car")
+                    .Where(x => (string)x.Element("Id") == node["Id"].InnerText)
+                    .FirstOrDefault();
+
+                if (DateOnly.Parse(node["RentEnd"].InnerText) < DateOnly.FromDateTime(DateTime.Now))
+                {
+                    dates.Remove();
+                    rrdoc.Save("..\\..\\..\\xml\\rented_cars.xml");
+                    continue;
+
+                }
+
                 if (node["Login"].InnerText == currentLogin)
                 {
-
                     rentedCarsId.Add(node["Id"].InnerText);
                 }
             }
@@ -98,9 +109,24 @@ namespace WpfApp1_04._12
                     .FirstOrDefault();
                 model = (string)models.Element("Model");
 
+/*                if (edate < DateOnly.FromDateTime(DateTime.Now))
+                {
+                        dates.Remove();
+                        rdoc.Save("..\\..\\..\\xml\\rented_cars.xml");
+                    continue;
+                 
+                }*/
+
                 result.Add(new RentedCarsTable(int.Parse(Id), model, sdate, edate));
             }
             grid.ItemsSource = result;
+            if (result.Count != 0)
+            {
+                grid.Columns[1].Header = "Модель";
+                grid.Columns[2].Header = "Начало проката";
+                grid.Columns[3].Header = "Конец проката";
+            }
+
         }
         private void grid_MouseUp(object sender, MouseButtonEventArgs e)
         {

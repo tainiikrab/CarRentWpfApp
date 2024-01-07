@@ -55,6 +55,8 @@ namespace WpfApp1_04._12
 
         }
 
+        RentPage rp = new RentPage();
+
         public void OpenTablesPage()
         {
             TablesPage tp = new TablesPage();
@@ -77,8 +79,11 @@ namespace WpfApp1_04._12
         }
         public void OpenRentPage()
         {
-            RentPage rp = new RentPage();
             this.Content = rp;
+        }
+        public void RentRemoveRectangle()
+        {
+            rp.RemoveRectangle();
         }
     }
 }
