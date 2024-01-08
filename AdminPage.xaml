@@ -5,22 +5,48 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp1_04._12"
       mc:Ignorable="d"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="450" d:DesignWidth="1300"
       Title="AdminPage">
 
-    <Grid Background="#FF0C0C0C">
-        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,60,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Здравствуйте, Администратор!" FontSize="20"/><LineBreak/><Run Language="ru-ru"/></TextBlock>
-        <Button Content="Список автомобилей" HorizontalAlignment="Center" Margin="0,221,0,0" VerticalAlignment="Top" Width="200" Click="Cars_click" Height="26" Foreground="Black" BorderBrush="{x:Null}" Background="{DynamicResource GradientButton1}">
-            <Button.Resources>
+    <Grid Background="#FF0C0C0C" Margin="0,0,0,-186">
+        <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=4}" Margin="133,166,133,0" Background="#FF1A1A1A" Foreground="White" AlternatingRowBackground="#FF1A1A1A" RowBackground="#FF1A1A1A" VerticalGridLinesBrush="{x:Null}" HorizontalGridLinesBrush="#FF222222" HeadersVisibility="Column" BorderBrush="{x:Null}" Loaded="grid_Loaded" MouseUp="grid_MouseUp" IsReadOnly="True" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" CanUserResizeColumns="False" VerticalAlignment="Top">
+            <DataGrid.Resources>
                 <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0C0C0C"/>
-            </Button.Resources>
-        </Button>
-        <Button Content="Выйти из аккаунта" HorizontalAlignment="Center" Margin="0,274,0,0" VerticalAlignment="Top" Width="200" Click="Return_click" Height="26" BorderBrush="{x:Null}" Background="#FFB3E099"/>
-        <Button Content="Список клиентов" HorizontalAlignment="Center" Margin="0,168,0,0" VerticalAlignment="Top" Width="200" Click="Clients_click" Height="26" Foreground="Black" BorderBrush="{x:Null}" Background="{DynamicResource GradientButton1}">
-            <Button.Resources>
-                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="#FF0C0C0C"/>
-            </Button.Resources>
-        </Button>
+                <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="#FFB3E099"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="#FF1A1A1A"/>
+                <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightTextBrushKey}" Color="White"/>
+
+
+            </DataGrid.Resources>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="Background" Value="#FFB3E099"/>
+                    <Setter Property="Foreground" Value="Black"/>
+                    <Setter Property="Height" Value="30"/>
+                    <Setter Property="Padding" Value="30, 0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Left"/>
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Setter Property="Height" Value="30"/>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.CellStyle>
+                <Style TargetType="{x:Type DataGridCell}">
+                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                </Style>
+            </DataGrid.CellStyle>
+        </DataGrid>
+        <Button Content="Назад" HorizontalAlignment="Center" Margin="0,580,0,0" Width="200" Click="Return_click" BorderBrush="{x:Null}" Background="#FFB3E099" Height="26" VerticalAlignment="Top"/>
+        <TextBlock x:Name="WelcomeBlock" HorizontalAlignment="Center" Margin="0,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20" Foreground="White" RenderTransformOrigin="1.612,1.07"><Run Language="ru-ru" Text="Здравствуйте, Администратор!"/></TextBlock>
+        <TextBlock HorizontalAlignment="Center" Margin="0,542,0,0" TextWrapping="Wrap" Text="Выберите клиента для изменения количества штрафов." VerticalAlignment="Top" Foreground="#FFBABABA"/>
+        <Rectangle x:Name="InactiveRectangle" HorizontalAlignment="Center" Height="636" Stroke="Black" VerticalAlignment="Center" Width="800" Fill="#CC1F1F1F" Visibility="Hidden"/>
+        <CheckBox x:Name="GroupCheckbox" Content="Сгруппировать по дням аренды" HorizontalAlignment="Left" Margin="133,94,0,0" VerticalAlignment="Top" Foreground="White" Checked="GroupCheckbox_Checked" Unchecked="GroupCheckbox_Unchecked" Background="White" IsChecked="False" BorderBrush="{x:Null}"/>
+        <TextBlock x:Name="CarsBlock" HorizontalAlignment="Center" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.612,1.07" Margin="0,143,0,0"><Run Language="ru-ru" Text="Клиенты"/><Run Text=":"/></TextBlock>
+        <TextBox x:Name="SearchBox" HorizontalAlignment="Left" Margin="369,94,0,0" TextWrapping="Wrap" Text="Поиск по логину" VerticalAlignment="Top" Width="120" Background="#FF0C0C0C" Foreground="White" BorderBrush="White" TextChanged="SearchBox_TextChanged" GotFocus="TextBox_GotFocus"/>
+        <Button Content="Сброс" HorizontalAlignment="Left" Margin="672,92,0,0" Width="51" Click="Abort_click" BorderBrush="{x:Null}" Background="#FFB3E099" Height="22" VerticalAlignment="Top"/>
+        <TextBox x:Name="AmountBox" HorizontalAlignment="Left" Margin="494,94,0,0" TextWrapping="Wrap" Text="Просмотр по кол-ву штрафов" VerticalAlignment="Top" Width="173" Background="#FF0C0C0C" Foreground="White" BorderBrush="White" TextChanged="AmountBox_TextChanged" GotFocus="TextBox_GotFocus"/>
 
     </Grid>
 </Page>

@@ -1,12 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <cars>
   <car>
-    <Id>1</Id>
-    <Login>sidor</Login>
-    <RentStart>02.08.2023</RentStart>
-    <RentEnd>05.01.2024</RentEnd>
-  </car>
-  <car>
     <Id>3</Id>
     <Login>sidor</Login>
     <RentStart>01.02.2023</RentStart>

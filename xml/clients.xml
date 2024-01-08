@@ -5,15 +5,15 @@
     <PasswordHash>8c6976e5b5410415bde908bd4dee15dfb167a9c873fc4bb8a81f6f2ab448a918</PasswordHash>
   </client>
   <client>
-    <login></login>
+    <login>pustick</login>
     <PasswordHash>e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855</PasswordHash>
     <Name>Пустодий</Name>
     <Surname>Нечегоев</Surname>
     <Patronym>Войдович</Patronym>
     <Telephone>+0 000 000 00 00</Telephone>
-    <Address>N0. Whe Re.street</Address>
+    <Address>г. Подольск ул. Вертолётчиков 5а</Address>
     <RentalRecord>0</RentalRecord>
-    <FineRecord>0</FineRecord>
+    <FineRecord>1</FineRecord>
   </client>
   <client>
     <login>petrick</login>
@@ -24,7 +24,7 @@
     <Telephone>+7 953 228 08 44</Telephone>
     <Address>508 Negro Alloyo Laine</Address>
     <RentalRecord>20</RentalRecord>
-    <FineRecord>0</FineRecord>
+    <FineRecord>2</FineRecord>
   </client>
   <client>
     <login>sidor</login>
@@ -35,17 +35,138 @@
     <Telephone>+7 953 228 08 44</Telephone>
     <Address>г. Москва ул. Нененского д.22</Address>
     <RentalRecord>0</RentalRecord>
+    <FineRecord>1</FineRecord>
+  </client>
+  <client>
+    <login>savanna</login>
+    <PasswordHash>5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8</PasswordHash>
+    <Name>Анна</Name>
+    <Surname>Иванова</Surname>
+    <Patronym>Алексеевна</Patronym>
+    <Telephone>+7 916 345 67 89</Telephone>
+    <Address>г. Санкт-Петербург пр. Невский д.12 кв.34</Address>
+    <RentalRecord>15</RentalRecord>
     <FineRecord>0</FineRecord>
   </client>
   <client>
-    <login>Логин</login>
-    <PasswordHash>cb1a2074b3a027ffa7d7d9c54682c3835fffc7f6d620d8a38532f075cc2f17a0</PasswordHash>
-    <Name>Имя</Name>
-    <Surname>Фамилия</Surname>
-    <Patronym>Отчество</Patronym>
-    <Telephone>Телефон</Telephone>
-    <Address>Адрес</Address>
-    <RentalRecord>0</RentalRecord>
+    <login>maximka</login>
+    <PasswordHash>7c4a8d09ca3762af61e59520943dc26494f8941b</PasswordHash>
+    <Name>Максим</Name>
+    <Surname>Петров</Surname>
+    <Patronym>Владимирович</Patronym>
+    <Telephone>+7 495 123 45 67</Telephone>
+    <Address>г. Новосибирск ул. Ленина д.5 кв.76</Address>
+    <RentalRecord>23</RentalRecord>
+    <FineRecord>2</FineRecord>
+  </client>
+  <client>
+    <login>olgator</login>
+    <PasswordHash>9a1158154dfa42caddbd0694a4e9bdc8</PasswordHash>
+    <Name>Ольга</Name>
+    <Surname>Смирнова</Surname>
+    <Patronym>Николаевна</Patronym>
+    <Telephone>+7 812 456 78 90</Telephone>
+    <Address>г. Екатеринбург ул. Малышева д.10 кв.12</Address>
+    <RentalRecord>18</RentalRecord>
     <FineRecord>0</FineRecord>
+  </client>
+  <client>
+    <login>killrill</login>
+    <PasswordHash>1a1dc91c907325c69271ddf0c944bc72</PasswordHash>
+    <Name>Кирилл</Name>
+    <Surname>Соколов</Surname>
+    <Patronym>Андреевич</Patronym>
+    <Telephone>+7 383 654 32 10</Telephone>
+    <Address>г. Омск ул. Красный Путь д.7 кв.45</Address>
+    <RentalRecord>12</RentalRecord>
+    <FineRecord>1</FineRecord>
+  </client>
+  <client>
+    <login>mariannka</login>
+    <PasswordHash>8cb2237d0679ca88db6464eac60da96345513964</PasswordHash>
+    <Name>Мария</Name>
+    <Surname>Попова</Surname>
+    <Patronym>Сергеевна</Patronym>
+    <Telephone>+7 499 765 43 21</Telephone>
+    <Address>г. Казань ул. Баумана д.15 кв.9</Address>
+    <RentalRecord>12</RentalRecord>
+    <FineRecord>0</FineRecord>
+  </client>
+  <client>
+    <login>alexandar</login>
+    <PasswordHash>14bfa6bb14875e45bba028a21ed38046</PasswordHash>
+    <Name>Алексей</Name>
+    <Surname>Новиков</Surname>
+    <Patronym>Игоревич</Patronym>
+    <Telephone>+7 917 876 54 32</Telephone>
+    <Address>г. Самара ул. Фрунзе д.23 кв.18</Address>
+    <RentalRecord>9</RentalRecord>
+    <FineRecord>3</FineRecord>
+  </client>
+  <client>
+    <login>eelena</login>
+    <PasswordHash>5f4dcc3b5aa765d61d8327deb882cf99</PasswordHash>
+    <Name>Елена</Name>
+    <Surname>Морозова</Surname>
+    <Patronym>Викторовна</Patronym>
+    <Telephone>+7 495 234 56 78</Telephone>
+    <Address>г. Москва ул. Тверская д.8 кв.67</Address>
+    <RentalRecord>9</RentalRecord>
+    <FineRecord>0</FineRecord>
+  </client>
+  <client>
+    <login>serguy</login>
+    <PasswordHash>7c6a180b36896a0a8c02787eeafb0e4c</PasswordHash>
+    <Name>Сергей</Name>
+    <Surname>Волков</Surname>
+    <Patronym>Александрович</Patronym>
+    <Telephone>+7 846 345 67 89</Telephone>
+    <Address>г. Саратов ул. Чернышевского д.12 кв.34</Address>
+    <RentalRecord>9</RentalRecord>
+    <FineRecord>1</FineRecord>
+  </client>
+  <client>
+    <login>irka</login>
+    <PasswordHash>2e7b67a58d28e70e9b715c4f5f8a68a9</PasswordHash>
+    <Name>Ирина</Name>
+    <Surname>Лебедева</Surname>
+    <Patronym>Васильевна</Patronym>
+    <Telephone>+7 831 456 78 90</Telephone>
+    <Address>г. Нижний Новгород ул. Горького д.10 кв.12</Address>
+    <RentalRecord>31</RentalRecord>
+    <FineRecord>1</FineRecord>
+  </client>
+  <client>
+    <login>denisss</login>
+    <PasswordHash>6c138a1b6d22840aed60f75a36f17ce0</PasswordHash>
+    <Name>Денис</Name>
+    <Surname>Орлов</Surname>
+    <Patronym>Владиславович</Patronym>
+    <Telephone>+7 343 654 32 10</Telephone>
+    <Address>г. Челябинск ул. Кирова д.7 кв.45</Address>
+    <RentalRecord>31</RentalRecord>
+    <FineRecord>3</FineRecord>
+  </client>
+  <client>
+    <login>veranda</login>
+    <PasswordHash>8d969eef6ecad3c29a3a629280e686cf</PasswordHash>
+    <Name>Вера</Name>
+    <Surname>Кузнецова</Surname>
+    <Patronym>Анатольевна</Patronym>
+    <Telephone>+7 843 765 43 21</Telephone>
+    <Address>г. Киров ул. Ленина д.15 кв.9</Address>
+    <RentalRecord>31</RentalRecord>
+    <FineRecord>0</FineRecord>
+  </client>
+  <client>
+    <login>romromka</login>
+    <PasswordHash>25d55ad283aa400af464c76d713c07ad</PasswordHash>
+    <Name>Роман</Name>
+    <Surname>Соловьев</Surname>
+    <Patronym>Геннадьевич</Patronym>
+    <Telephone>+7 846 876 54 32</Telephone>
+    <Address>г. Тольятти ул. Революционная д.23 кв.18</Address>
+    <RentalRecord>31</RentalRecord>
+    <FineRecord>4</FineRecord>
   </client>
 </clients>

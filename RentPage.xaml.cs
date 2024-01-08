@@ -115,7 +115,10 @@ namespace WpfApp1_04._12
 
         private void Return_click(object sender, RoutedEventArgs e)
         {
-            mainWindow.OpenTablesPage();
+            if (mainWindow != null)
+            {
+                mainWindow.OpenTablesPage();
+            }
         }
 
         double CalculateRentalPrice(int baseRentalPrice, int manufactureYear, int rentalPeriod, int userRentalDays, int fines)
@@ -143,19 +146,7 @@ namespace WpfApp1_04._12
             Console.WriteLine("Rectangle removed");
         }
 
-        private void DebugCheckbox_Checked(object sender, RoutedEventArgs e)
-        {
-            XDocument docl = XDocument.Load("..\\..\\..\\xml\\all_cars.xml");
-                var type = (from x in docl.Element("cars").Elements("car")
-                            group x by x.Element("Model").Value into g
-                            select new
-                            {
-                                Тип = g.Key,
-                                Количество = g.Count()
 
-                            }).ToList();
-                grid.ItemsSource = type;
-        }
     }
 
 

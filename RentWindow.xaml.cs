@@ -101,7 +101,7 @@ namespace WpfApp1_04._12
                         XElement rentalRecord = client.Element("RentalRecord");
                         if (rentalRecord != null)
                         {
-                            rentalRecord.Value = span.Days.ToString();
+                            rentalRecord.Value = (int.Parse(rentalRecord.Value) + span.Days).ToString();
                             clients.Save("..\\..\\..\\xml\\clients.xml");
                         }
                     }

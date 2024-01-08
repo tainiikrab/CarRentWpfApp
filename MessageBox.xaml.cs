@@ -28,8 +28,8 @@ namespace WpfApp1_04._12
                     CreateButton("Нет", MessageBoxResult.No);
                     break;
                 case MessageBoxButton.YesNoCancel:
-                    CreateButton("Да", MessageBoxResult.Yes);
-                    CreateButton("Нет", MessageBoxResult.No);
+                    CreateButton("Добавить", MessageBoxResult.Yes);
+                    CreateButton("Убавить", MessageBoxResult.No);
                     CreateButton("Отмена", MessageBoxResult.Cancel, true);
                     break;
                 default:

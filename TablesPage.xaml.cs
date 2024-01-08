@@ -58,21 +58,9 @@ namespace WpfApp1_04._12
             rdoc.Load("..\\..\\..\\xml\\rented_cars.xml");
        
             XmlElement? root = rdoc.DocumentElement;
-            XDocument rrdoc = XDocument.Load("..\\..\\..\\xml\\rented_cars.xml");
             XmlNodeList? nodes = root.SelectNodes("car");
             foreach (XmlNode node in nodes)
             {
-                var dates = rrdoc.Descendants("car")
-                    .Where(x => (string)x.Element("Id") == node["Id"].InnerText)
-                    .FirstOrDefault();
-
-                if (DateOnly.Parse(node["RentEnd"].InnerText) < DateOnly.FromDateTime(DateTime.Now))
-                {
-                    dates.Remove();
-                    rrdoc.Save("..\\..\\..\\xml\\rented_cars.xml");
-                    continue;
-
-                }
 
                 if (node["Login"].InnerText == currentLogin)
                 {
@@ -131,6 +119,10 @@ namespace WpfApp1_04._12
         private void grid_MouseUp(object sender, MouseButtonEventArgs e)
         {
             RentedCarsTable path = grid.SelectedItem as RentedCarsTable;
+            if (path == null)
+            {
+                return;
+            }
             MessageBox.Show("Автомобиль", " ID: " + path.Id + "\n Модель: " + path.Модель + "\n Начало проката: " + path.НачалоПроката
                 + "\n Конец Проката: " + path.КонецПроката, MessageBoxButton.OK);
             ;
@@ -154,13 +146,13 @@ namespace WpfApp1_04._12
             if (MessageBoxResult.OK == MessageBox.Show("Удаление аккаунта", "Вы уверены, что хотите удалить аккаунт?", MessageBoxButton.OKCancel))
             {
                 MessageBox.Show("Успех", "Вы удалили аккаунт.", MessageBoxButton.OK);
-/*                XDocument doc = XDocument.Load("..\\..\\..\\xml\\clients.xml");
+                XDocument doc = XDocument.Load("..\\..\\..\\xml\\clients.xml");
                 var client = doc.Descendants("client")
                             .Where(x => (string)x.Element("login") == currentLogin)
                             .FirstOrDefault();
                 client.Remove();
                 doc.Save("..\\..\\..\\xml\\clients.xml");
-                mainWindow.OpenLoginPage();*/
+                mainWindow.OpenLoginPage();
             }   
         }
 

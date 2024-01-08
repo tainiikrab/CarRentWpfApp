@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1_04._12"
         mc:Ignorable="d"
-        Title="Прокат Автомобилей" Height="675" Width="1200">
+        Title="Прокат Автомобилей" Height="675" Width="1300">
     <Window.Resources>
         <LinearGradientBrush x:Key="GradientButton" EndPoint="1,1" StartPoint="0,0">
             <GradientStop Color="#FF76BAAE"/>

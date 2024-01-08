@@ -44,18 +44,45 @@ namespace WpfApp1_04._12
     }
     public partial class MainWindow : Window
     {
+        RentPage rp;
         XmlDocument doc = new XmlDocument();
         public MainWindow()
         {
             InitializeComponent();
+            rp = new RentPage();
             LoginPage lp = new LoginPage();
             this.Content = lp;
-/*            RentWindow rent = new RentWindow();
-            rent.Show();*/
+            /*            RentWindow rent = new RentWindow();
+                        rent.Show();*/
 
+
+
+
+
+
+
+            XmlDocument rdoc = new XmlDocument();
+            rdoc.Load("..\\..\\..\\xml\\rented_cars.xml");
+
+            XmlElement? root = rdoc.DocumentElement;
+            XDocument rrdoc = XDocument.Load("..\\..\\..\\xml\\rented_cars.xml");
+            XmlNodeList? nodes = root.SelectNodes("car");
+            foreach (XmlNode node in nodes)
+            {
+                var dates = rrdoc.Descendants("car")
+                    .Where(x => (string)x.Element("Id") == node["Id"].InnerText)
+                    .FirstOrDefault();
+
+                if (DateOnly.Parse(node["RentEnd"].InnerText) < DateOnly.FromDateTime(DateTime.Now))
+                {
+                    dates.Remove();
+                    rrdoc.Save("..\\..\\..\\xml\\rented_cars.xml");
+
+                }
+
+            }
         }
-
-        RentPage rp = new RentPage();
+        
 
         public void OpenTablesPage()
         {

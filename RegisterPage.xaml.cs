@@ -47,7 +47,7 @@ namespace WpfApp1_04._12
                     MessageBox.Show("Ошибка", "Этот логин уже существует.", MessageBoxButton.OK);
                     return;
                 }
-                if (NameBox.Text == string.Empty || SurnameBox.Text == string.Empty || AddressBox.Text == string.Empty || PatronymBox.Text == string.Empty || TelephoneBox.Text == string.Empty || LoginBox.Text == string.Empty || PasswordBox.Text == string.Empty)
+                if (NameBox.Text == string.Empty || SurnameBox.Text == string.Empty || AddressBox.Text == string.Empty || PatronymBox.Text == string.Empty || TelephoneBox.Text == string.Empty || LoginBox.Text == string.Empty || PasswordBox.Text == string.Empty || LoginBox.Text == "Логин")
                 {
                     MessageBox.Show("Ошибка", "Пропущено одно или несколько полей.", MessageBoxButton.OK);
                     return;
